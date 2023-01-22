@@ -1,0 +1,30 @@
+\documentclass{article}
+\author{Rohit Bhaurao Torkad}
+\date{10-01-2023}
+\usepackage{csvsimple}
+\usepackage{biblatex} % for creating bibliographies
+
+\begin{document}
+\section{Table ;}
+	\csvreader[tabular=|l|l|c|c|,
+	table head=\hline & Name & Age & Gender\\\hline,
+	late after line=\\\hline]%
+	{data.csv}{Name=\Name, Age=\Age, Gender=\Gender}%
+	{\thecsvrow & \Name & \Age & \Gender}%
+	\newpage
+
+\section{Bibliography ;}	
+	\begin{thebibliography}{100} % 100 is a random guess of the total number of
+		%Bibliography
+		\bibitem{Boney96} Boney, L., Tewfik, A.H., and Hamdy, K.N., ``Digital
+		Watermarks for Audio Signals," \emph{Proceedings of the Third IEEE
+			International Conference on Multimedia}, pp. 473-480, June 1996.
+		\bibitem{MG} Goossens, M., Mittelbach, F., Samarin, \emph{A LaTeX
+			Companion}, Addison-Wesley, Reading, MA, 1994.
+		\bibitem{HK} Kopka, H., Daly P.W., \emph{A Guide to LaTeX},
+		Addison-Wesley, Reading, MA, 1999.
+		\bibitem{Pan} Pan, D., ``A Tutorial on MPEG/Audio Compression," \emph{IEEE
+			Multimedia}, Vol.2, pp.60-74, Summer 1998.
+	\end{thebibliography}
+
+\end{document}
